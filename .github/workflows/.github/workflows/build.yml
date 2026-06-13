@@ -17,13 +17,16 @@ jobs:
         dotnet-version: '8.0.x'
     
     - name: Restore dependencies
-      run: dotnet restore MP4_Player/MP4_Player.csproj
+      working-directory: ./MP4_Player
+      run: dotnet restore MP4_Player.csproj
     
     - name: Build
-      run: dotnet build MP4_Player/MP4_Player.csproj -c Release --no-restore
+      working-directory: ./MP4_Player
+      run: dotnet build MP4_Player.csproj -c Release --no-restore
     
     - name: Publish
-      run: dotnet publish MP4_Player/MP4_Player.csproj -c Release -o publish
+      working-directory: ./MP4_Player
+      run: dotnet publish MP4_Player.csproj -c Release -o ../publish
     
     - name: Create Release
       uses: actions/create-release@v1
