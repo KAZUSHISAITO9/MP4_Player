@@ -1,0 +1,24 @@
+<Window x:Class="MP4_Player.FullscreenPlayer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="FullscreenPlayer"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="Black"
+        PreviewKeyDown="Window_PreviewKeyDown">
+    <Grid>
+        <MediaElement x:Name="mediaElement"
+                      Stretch="UniformToFill"
+                      Volume="0.5"
+                      LoadedBehavior="Manual"/>
+        
+        <TextBlock x:Name="titleTextBlock"
+                   Text="Loading..."
+                   Foreground="White"
+                   FontSize="24"
+                   VerticalAlignment="Top"
+                   HorizontalAlignment="Center"
+                   Margin="0,20,0,0"
+                   Opacity="0.7"/>
+    </Grid>
+</Window>
